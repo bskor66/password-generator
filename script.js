@@ -3,6 +3,10 @@ const characterSet = [
 	"!#$%&'()*+,-./:;<=>?@[]^_`{|}~",
 ];
 
+function randomChar(chars) {
+	return chars.charAt([Math.floor(Math.random() * chars.length)]);
+}
+
 function generatePassword() {
 	document.querySelector("#input-form").style.display = "none";
 	document.querySelector("#password").style.display = "block";
@@ -16,7 +20,7 @@ function generatePassword() {
 	];
 	let password = "";
 	for (let i = 0; i < passwordLength; i++) {
-		password += "a";
+		password += randomChar(characterSet[0]);
 	}
 
 	return password;
