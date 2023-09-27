@@ -12,12 +12,20 @@ function generatePassword() {
 	document.querySelector("#password").style.display = "block";
 
 	let passwordLength = document.getElementById("password-length").value;
-	let characterChoice = [
-		document.getElementById("lowercase").checked,
-		document.getElementById("uppercase").checked,
-		document.getElementById("numbers").checked,
-		document.getElementById("special-characters").checked,
-	];
+	let selectedChars = [];
+	if (document.getElementById("lowercase").checked) {
+		selectedChars.push(document.getElementById("lowercase").value);
+	}
+	if (document.getElementById("uppercase").checked) {
+		selectedChars.push(document.getElementById("uppercase").value);
+	}
+	if (document.getElementById("number").checked) {
+		selectedChars.push(document.getElementById("number").value);
+	}
+	if (document.getElementById("special-characters").checked) {
+		selectedChars.push(document.getElementById("special-characters").value);
+	}
+
 	let password = "";
 	for (let i = 0; i < passwordLength; i++) {
 		let addingChar;
@@ -35,7 +43,7 @@ function generatePassword() {
 				addingChar = randomChar(characterSet[1]);
 				break;
 		}
-		password += randomChar(characterSet[0]);
+		password += addingChar;
 	}
 
 	return password;
