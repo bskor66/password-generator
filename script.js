@@ -3,6 +3,11 @@ const characterSet = [
 	"!#$%&'()*+,-./:;<=>?@[]^_`{|}~",
 ];
 
+function refreshPage() {
+	location.reload();
+	return;
+}
+
 function randomInt(max) {
 	return Math.floor(Math.random() * max);
 }
@@ -57,6 +62,7 @@ function generatePassword() {
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+var backToOptionsBtn = document.querySelector("#back-to-options");
 
 // Write password to the #password input
 function writePassword() {
@@ -68,3 +74,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+backToOptionsBtn.addEventListener("click", refreshPage);
