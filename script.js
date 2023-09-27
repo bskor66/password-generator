@@ -1,3 +1,8 @@
+const characterSet = [
+	"abcdefghijklmnopqrstuvwxyz",
+	"!#$%&'()*+,-./:;<=>?@[]^_`{|}~",
+];
+
 function generatePassword() {
 	document.querySelector("#input-form").style.display = "none";
 	document.querySelector("#password").style.display = "block";
@@ -9,7 +14,12 @@ function generatePassword() {
 		document.getElementById("numbers").checked,
 		document.getElementById("special-characters").checked,
 	];
-	console.log(characterChoice);
+	let password = "";
+	for (let i = 0; i < passwordLength; i++) {
+		password += "a";
+	}
+
+	return password;
 }
 
 // Get references to the #generate element
