@@ -24,18 +24,22 @@ function generatePassword() {
 
 	let passwordLength = document.getElementById("password-length").value;
 	let selectedChars = [];
+	let lowercaseSelect = document.getElementById("lowercase");
+	let uppercaseSelect = document.getElementById("uppercase");
+	let numberSelect = document.getElementById("numbers");
+	let specialSelect = document.getElementById("special-characters");
 
-	if (document.getElementById("lowercase").checked) {
-		selectedChars.push(document.getElementById("lowercase").value);
+	if (lowercaseSelect.checked) {
+		selectedChars.push(lowercaseSelect.value);
 	}
-	if (document.getElementById("uppercase").checked) {
-		selectedChars.push(document.getElementById("uppercase").value);
+	if (uppercaseSelect.checked) {
+		selectedChars.push(uppercaseSelect.value);
 	}
-	if (document.getElementById("numbers").checked) {
-		selectedChars.push(document.getElementById("numbers").value);
+	if (numberSelect.checked) {
+		selectedChars.push(numberSelect.value);
 	}
-	if (document.getElementById("special-characters").checked) {
-		selectedChars.push(document.getElementById("special-characters").value);
+	if (specialSelect.checked) {
+		selectedChars.push(specialSelect.value);
 	}
 
 	let password = "";
