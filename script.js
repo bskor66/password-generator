@@ -20,6 +20,21 @@ function generatePassword() {
 	];
 	let password = "";
 	for (let i = 0; i < passwordLength; i++) {
+		let addingChar;
+		switch ("uppercase") {
+			case "uppercase":
+				addingChar = randomChar(characterSet[0]).toUpperCase();
+				break;
+			case "lowercase":
+				addingChar = randomChar(characterSet[0]);
+				break;
+			case "number":
+				addingChar = Math.floor(Math.random() * 10);
+				break;
+			case "special":
+				addingChar = randomChar(characterSet[1]);
+				break;
+		}
 		password += randomChar(characterSet[0]);
 	}
 
