@@ -4,11 +4,12 @@ function generatePassword() {
 
 	let passwordLength = document.getElementById("password-length").value;
 	let characterChoice = [
-		document.getElementById("lowercase").value,
-		document.getElementById("uppercase").value,
-		document.getElementById("number").value,
-		document.getElementById("special-characters").value,
+		document.getElementById("lowercase").checked,
+		document.getElementById("uppercase").checked,
+		document.getElementById("numbers").checked,
+		document.getElementById("special-characters").checked,
 	];
+	console.log(characterChoice);
 }
 
 // Get references to the #generate element
