@@ -1,4 +1,5 @@
 function generatePassword() {
+	document.querySelector("#input-form").style.display = "none";
 	document.querySelector("#password").style.display = "block";
 	return "test";
 }
