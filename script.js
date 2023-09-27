@@ -18,7 +18,9 @@ function randomChar(chars) {
 
 function generatePassword() {
 	document.querySelector("#input-form").style.display = "none";
+	document.querySelector("#generate").innerHTML = "Regenerate";
 	document.querySelector("#password").style.display = "block";
+	document.querySelector("#back-to-options").style.display = "inline-block";
 
 	let passwordLength = document.getElementById("password-length").value;
 	let selectedChars = [];

@@ -97,6 +97,10 @@ button[disabled] {
 	float: right;
 }
 
+#back-to-options {
+	display: none;
+}
+
 #password {
 	-webkit-appearance: none;
 	-moz-appearance: none;
