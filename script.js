@@ -1,7 +1,14 @@
 function generatePassword() {
 	document.querySelector("#input-form").style.display = "none";
 	document.querySelector("#password").style.display = "block";
-	return "test";
+
+	let passwordLength = document.getElementById("password-length").value;
+	let characterChoice = [
+		document.getElementById("lowercase").value,
+		document.getElementById("uppercase").value,
+		document.getElementById("number").value,
+		document.getElementById("special-characters").value,
+	];
 }
 
 // Get references to the #generate element
