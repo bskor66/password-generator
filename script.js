@@ -17,12 +17,13 @@ function randomChar(chars) {
 }
 
 function generatePassword() {
-	document.querySelector("#input-form").style.display = "none";
-	document.querySelector("#generate").innerHTML = "Regenerate";
-	document.querySelector("#password").style.display = "block";
-	document.querySelector("#back-to-options").style.display = "inline-block";
-
 	let passwordLength = document.getElementById("password-length").value;
+
+	if (!passwordLength) {
+		alert("Please select a password length");
+		refreshPage();
+	}
+
 	let selectedChars = [];
 	let lowercaseSelect = document.getElementById("lowercase");
 	let uppercaseSelect = document.getElementById("uppercase");
@@ -42,7 +43,18 @@ function generatePassword() {
 		selectedChars.push(specialSelect.value);
 	}
 
+	if (!selectedChars.length) {
+		alert("Please choose characters to include");
+		refreshPage();
+	}
+
+	document.querySelector("#input-form").style.display = "none";
+	document.querySelector("#generate").innerHTML = "Regenerate";
+	document.querySelector("#password").style.display = "block";
+	document.querySelector("#back-to-options").style.display = "inline-block";
+
 	let password = "";
+
 	for (let i = 0; i < passwordLength; i++) {
 		let addingChar;
 
