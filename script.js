@@ -3,8 +3,12 @@ const characterSet = [
 	"!#$%&'()*+,-./:;<=>?@[]^_`{|}~",
 ];
 
+function randomInt(max) {
+	return Math.floor(Math.random() * max);
+}
+
 function randomChar(chars) {
-	return chars.charAt([Math.floor(Math.random() * chars.length)]);
+	return chars.charAt(randomInt(chars.length));
 }
 
 function generatePassword() {
@@ -13,6 +17,7 @@ function generatePassword() {
 
 	let passwordLength = document.getElementById("password-length").value;
 	let selectedChars = [];
+
 	if (document.getElementById("lowercase").checked) {
 		selectedChars.push(document.getElementById("lowercase").value);
 	}
@@ -26,13 +31,11 @@ function generatePassword() {
 		selectedChars.push(document.getElementById("special-characters").value);
 	}
 
-	console.log(selectedChars);
-
 	let password = "";
 	for (let i = 0; i < passwordLength; i++) {
 		let addingChar;
 
-		switch (selectedChars[Math.floor(Math.random() * selectedChars.length)]) {
+		switch (selectedChars[randomInt(selectedChars.length)]) {
 			case "uppercase":
 				addingChar = randomChar(characterSet[0]).toUpperCase();
 				break;
