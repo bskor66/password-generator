@@ -19,17 +19,20 @@ function generatePassword() {
 	if (document.getElementById("uppercase").checked) {
 		selectedChars.push(document.getElementById("uppercase").value);
 	}
-	if (document.getElementById("number").checked) {
-		selectedChars.push(document.getElementById("number").value);
+	if (document.getElementById("numbers").checked) {
+		selectedChars.push(document.getElementById("numbers").value);
 	}
 	if (document.getElementById("special-characters").checked) {
 		selectedChars.push(document.getElementById("special-characters").value);
 	}
 
+	console.log(selectedChars);
+
 	let password = "";
 	for (let i = 0; i < passwordLength; i++) {
 		let addingChar;
-		switch ("uppercase") {
+
+		switch (selectedChars[Math.floor(Math.random() * selectedChars.length)]) {
 			case "uppercase":
 				addingChar = randomChar(characterSet[0]).toUpperCase();
 				break;
